@@ -1,5 +1,18 @@
-body {
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button,
+select,
+textarea {
   font-family: "Poppins", sans-serif;
+}
+
+body {
   background: #e5e5e5;
 }
 
@@ -30,6 +43,7 @@ header h1 {
   font-size: 36px;
   line-height: 42px;
   color: white;
+  margin-bottom: 24px;
 }
 
 header p {
@@ -42,13 +56,23 @@ form {
   background: #fafafc;
   min-height: 300px;
   margin-top: 38px;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 
   padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 fieldset {
   border: none;
+ 
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 fieldset legend {
@@ -60,4 +84,145 @@ fieldset legend {
   width: 100%;
   padding-bottom: 16px;
   border-bottom: 1px solid #e6e6f0;
+}
+
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.InputWrapper label,
+.CheckboxWrapper label {
+  font-size: 14px;
+  line-height: 24px;
+  color: #4e4958;
+
+  
+  margin-bottom: 8px;
+}
+
+.InputWrapper label span {
+  margin-left: 12px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #d2d2d2;
+}
+
+.InputWrapper label span:hover {
+  color: #6c6a71;
+}
+
+.InputWrapper input,
+.InputWrapper textarea,
+.InputWrapper select {
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+  height: 56px;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+}
+
+.InputWrapper textarea {
+  padding: 0%;
+  height: 168px;
+}
+
+.InputWrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+.col {
+  display: flex;
+  gap: 20px;
+}
+
+.col > div:nth-child(1) {
+  width: 100%;
+}
+
+.CheckboxWrapper {
+  position: relative;
+}
+
+.CheckboxWrapper label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+}
+
+.CheckboxWrapper input {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+}
+
+.CheckboxWrapper label::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+}
+
+.CheckboxWrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.CheckboxWrapper input:focus + label::before {
+  outline: 2px solid black;
+}
+
+footer {
+  background: #f0f0f4;
+  
+
+  display: flex;
+
+  padding: 40px 64px;
+  margin-bottom: 100px;
+
+  border-top: 1px solid #d6d6d6;
+  border-radius: 0 0 8px 8px;
+
+  position: absolute;
+  flex-direction: column;
+  width: 736px;
+  
+  align-items: center;
+}
+
+footer input {
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background: #04d361;
+  color: white;
+  border: 0;
+  height: 56px;
+
+  width: 608px;
+  line-height: 26px;
+  align-items: center;
+}
+
+footer input:hoover {
+  background: rgb(3, 163, 75);
 }
